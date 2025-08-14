@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping(path = "api/v1/rooms")
 public class RoomController {
@@ -26,7 +27,7 @@ public class RoomController {
 
     // POST new room
     @PostMapping
-    public void createRoom(@RequestBody Room room) {
-        roomService.addNewRoom(room);
+    public Room createRoom(@RequestBody Room room) {
+        return roomService.addNewRoom(room);
     }
 }

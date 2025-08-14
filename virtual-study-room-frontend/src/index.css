@@ -22,17 +22,63 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #1c1c3c, #4b6cb7);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-window {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.message {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+form {
+    display: flex;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
 }
 
 button {

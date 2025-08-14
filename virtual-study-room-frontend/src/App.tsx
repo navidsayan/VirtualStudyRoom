@@ -28,10 +28,14 @@ const createRoom = async (e: React.FormEvent) => {
 
   setLoading(true);
   try {
-    const res = await fetch('/api/v1/rooms', {
+    const res = await fetch('http://localhost:8080/api/v1/rooms', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: roomName }),
+      body: JSON.stringify({
+          name: roomName,
+
+          owner: { id: 3, name: "Mariam", dob: "2000-01-05",  email: "mariam.jamal@gmail.com" }
+      }),
     });
     if (res.ok) {
       const newRoom = await res.json();

@@ -19,7 +19,6 @@ public class UserConfig {
     CommandLineRunner commandLineRunner(UserRepository repository){
         return args -> {
             User mariam = new User(
-
                     "Mariam",
                     LocalDate.of(2000, JANUARY, 5),
                     "mariam.jamal@gmail.com"

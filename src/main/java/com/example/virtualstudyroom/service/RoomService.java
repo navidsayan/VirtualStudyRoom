@@ -21,8 +21,8 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public void addNewRoom(Room room) {
+    public Room addNewRoom(Room room) {
         // Optional: Add validation logic here if needed
-        roomRepository.save(room);
+        return roomRepository.save(room);
     }
 }
