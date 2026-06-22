@@ -1,8 +1,12 @@
 package com.example.virtualstudyroom.controller;
 
+import com.example.virtualstudyroom.dto.RoomRequest;
+import com.example.virtualstudyroom.dto.RoomResponse;
 import com.example.virtualstudyroom.model.Room;
 import com.example.virtualstudyroom.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +31,9 @@ public class RoomController {
 
     // POST new room
     @PostMapping
-    public Room createRoom(@RequestBody Room room) {
-        return roomService.addNewRoom(room);
+    public ResponseEntity<RoomResponse> createRoom(@RequestBody RoomRequest request) {
+        System.out.println("Controller received: " + request);   // debug
+        RoomResponse response = roomService.addNewRoom(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
